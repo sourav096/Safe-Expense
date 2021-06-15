@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "769928998639",
+    "project_id": "safe-expense-9ffd2",
+    "storage_bucket": "safe-expense-9ffd2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:769928998639:android:4bac76e1ef9e4ddd72351a",
+        "android_client_info": {
+          "package_name": "com.example.safeexpense"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "769928998639-4iu5nsh9tp73bvhigp54puuh7cvh40uj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.safeexpense",
+            "certificate_hash": "c0dc0fd44a18c315d35d1ccff5929a11a8ce81c9"
+          }
+        },
+        {
+          "client_id": "769928998639-e0peg1asmsbn0cdcoqvhddpska3hjgid.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCf70ZBfuF9es5Hy_f4hKd4BygbElRm_SA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "769928998639-e0peg1asmsbn0cdcoqvhddpska3hjgid.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
