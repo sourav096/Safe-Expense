@@ -1,9 +1,11 @@
 package com.example.safeexpense;
 
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -93,6 +95,7 @@ public class StatsFragment extends Fragment {
 
 
         mIncomeDatabase.addValueEventListener(new ValueEventListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 values[0] = 0;
@@ -124,6 +127,7 @@ public class StatsFragment extends Fragment {
         //Calculate total expense
 
         mExpenseDatabase.addValueEventListener(new ValueEventListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
