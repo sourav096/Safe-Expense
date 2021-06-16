@@ -48,6 +48,8 @@ dependencies {
     // FirebaseUI for Cloud Firestore
     //implementation 'com.firebaseui:firebase-ui-firestore:6.3.0'
 
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
     // FirebaseUI for Firebase Auth
     implementation 'com.firebaseui:firebase-ui-auth:6.3.0'
 

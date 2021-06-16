@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
@@ -28,6 +29,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private DashBoardFragment dashBoardFragment;
     private IncomeFragment incomeFragment;
     private ExpenseFragment expenseFragment;
+    private StatsFragment statsFragment;
 
     //Logout managment with firebase
 
@@ -41,6 +43,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar=findViewById(R.id.my_toolbar);
         toolbar.setTitle("Safe Expense");
         //setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
 
         mAuth=FirebaseAuth.getInstance();
 
@@ -49,6 +53,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close
         );
 
+        toggle.setDrawerIndicatorEnabled(true);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -61,6 +66,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         dashBoardFragment=new DashBoardFragment();
         incomeFragment=new IncomeFragment();
         expenseFragment=new ExpenseFragment();
+        statsFragment=new StatsFragment();
 
         setFragment(dashBoardFragment);
 
@@ -79,6 +85,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                   case R.id.expense:
                       setFragment(expenseFragment);
                       bottomNavigationView.setItemBackgroundResource(R.color.expense_color);
+                      return true;
+                  case R.id.stats:
+                      setFragment(statsFragment);
+                      bottomNavigationView.setItemBackgroundResource(R.color.stats_color);
                       return true;
                   default:
                       return false;
@@ -121,6 +131,15 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             case R.id.expense:
                 fragment=new ExpenseFragment();
                 break;
+            case R.id.stats:
+                bottomNavigationView.setSelectedItemId(R.id.stats);
+                bottomNavigationView.findViewById(R.id.stats).performClick();
+                bottomNavigationView.performClick();
+                fragment=new StatsFragment();
+                break;
+            case R.id.account:
+                fragment=new AccountFragment();
+                break;
             case R.id.logout:
                 mAuth.signOut();
                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
@@ -140,6 +159,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Log.i("ITEM ID", Integer.toString(item.getItemId()));
         displaySelectedListener(item.getItemId());
         return true;
     }

@@ -7,6 +7,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -60,8 +61,9 @@ public class RegistrationActivity extends AppCompatActivity {
                     mPass.setError("Password Required...");
                     return;
                 }
-
-                mDialog.setMessage("Processing..");
+                Log.i("val", email);
+                Log.i("val", pass);
+                mDialog.setMessage("Processing..Please wait while we process your data");
                 mDialog.show();
                 mAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -69,7 +71,7 @@ public class RegistrationActivity extends AppCompatActivity {
                         if (task.isSuccessful()){
                             mDialog.dismiss();
                             Toast.makeText(getApplicationContext(), "Registration Complete..", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                         }
                         else {
                             mDialog.dismiss();
