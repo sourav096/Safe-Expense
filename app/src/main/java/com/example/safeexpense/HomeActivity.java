@@ -42,9 +42,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         Toolbar toolbar=findViewById(R.id.my_toolbar);
         toolbar.setTitle("Safe Expense");
-        //setSupportActionBar(toolbar);
-       // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        // getSupportActionBar().setHomeButtonEnabled(true);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
 
         mAuth=FirebaseAuth.getInstance();
 
