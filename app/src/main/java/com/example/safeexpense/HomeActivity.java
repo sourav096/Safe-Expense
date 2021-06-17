@@ -122,14 +122,20 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         Fragment fragment=null;
         switch (itemId){
+            case android.R.id.home:
+                DrawerLayout drawerLayout=findViewById(R.id.drawer_layout);
+                drawerLayout.openDrawer(GravityCompat.START);
             case R.id.dashboard:
                 fragment=new DashBoardFragment();
+                bottomNavigationView.setSelectedItemId(R.id.dashboard);
                 break;
             case R.id.income:
                 fragment=new IncomeFragment();
+                bottomNavigationView.setSelectedItemId(R.id.income);
                 break;
             case R.id.expense:
                 fragment=new ExpenseFragment();
+                bottomNavigationView.setSelectedItemId(R.id.expense);
                 break;
             case R.id.stats:
                 bottomNavigationView.setSelectedItemId(R.id.stats);
