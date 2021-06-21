@@ -104,7 +104,8 @@ public class StatsFragment extends Fragment {
                     Data data = mysnap.getValue(Data.class);
 
                     values[0] += data.getAmount();
-                    DateFormat format = new SimpleDateFormat("MMMM d, yyyy", Locale.ENGLISH);
+                    DateFormat format = new SimpleDateFormat("dd-MMM-yyyy", Locale.ENGLISH);
+                  //  DateFormat format = new SimpleDateFormat("MMMM dd, yyyy", Locale.ENGLISH);
                     Date date = null;
                     try {
                         date = format.parse(data.getDate());
@@ -138,7 +139,8 @@ public class StatsFragment extends Fragment {
                     Data data = mysnap.getValue(Data.class);
 
                     values[1] += data.getAmount();
-                    DateFormat format = new SimpleDateFormat("MMM d, yyyy", Locale.ENGLISH);
+                  //  DateFormat format = new SimpleDateFormat("MMM d, yyyy", Locale.ENGLISH);
+                    DateFormat format = new SimpleDateFormat("dd-MMM-yyyy", Locale.ENGLISH);
                     Date date = null;
                     try {
                         date = format.parse(data.getDate());

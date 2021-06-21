@@ -76,7 +76,7 @@ public class ExpenseFragment extends Fragment {
         FirebaseUser mUser = mAuth.getCurrentUser();
         String uid = mUser.getUid();
 
-        mExpenseDatabase = FirebaseDatabase.getInstance().getReference().child("ExpensewData").child(uid);
+        mExpenseDatabase = FirebaseDatabase.getInstance().getReference().child("ExpenseData").child(uid);
         expenseSumResult=myview.findViewById(R.id.expense_txt_result);
 
         recyclerView = myview.findViewById(R.id.recycler_id_expense);
