@@ -89,7 +89,7 @@ public class StatsFragment extends Fragment {
         String uid = mUser.getUid();
 
         mIncomeDatabase = FirebaseDatabase.getInstance().getReference().child("IncomeData").child(uid);
-        mExpenseDatabase = FirebaseDatabase.getInstance().getReference().child("ExpenseData").child(uid);
+        mExpenseDatabase = FirebaseDatabase.getInstance().getReference().child("ExpensewData").child(uid);
         mIncomeDatabase.keepSynced(true);
         mExpenseDatabase.keepSynced(true);
 
